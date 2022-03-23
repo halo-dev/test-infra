@@ -1,4 +1,36 @@
 plugins:
+  halo-dev:
+    plugins:
+    - approve
+    - assign
+    - blunderbuss
+    - cat
+    - dog
+    - help
+    - heart
+    - hold
+    - label
+    - lgtm
+    - trigger
+    - verify-owners
+    - wip
+    - yuks
+  JohnNiang/action-test:
+    plugins:
+    - approve
+    - assign
+    - blunderbuss
+    - cat
+    - dog
+    - help
+    - heart
+    - hold
+    - label
+    - lgtm
+    - trigger
+    - verify-owners
+    - wip
+    - yuks
   halo-dev/test-infra:
     plugins:
     - config-updater
