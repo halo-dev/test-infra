@@ -15,6 +15,7 @@ plugins:
     - verify-owners
     - wip
     - yuks
+    - retitle
   JohnNiang/action-test:
     plugins:
     - approve
@@ -31,6 +32,7 @@ plugins:
     - verify-owners
     - wip
     - yuks
+    - retitle
   halo-dev/test-infra:
     plugins:
     - config-updater
