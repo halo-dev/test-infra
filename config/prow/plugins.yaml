@@ -1,0 +1,14 @@
+plugins:
+  halo-dev/test-infra:
+    plugins:
+    - config-updater
+config_updater:
+  maps:
+    # Update the config configmap whenever config.yaml changes
+    config/prow/config.yaml:
+      name: config
+    # Update the plugin configmap whenever plugins.yaml changes
+    config/prow/plugins.yaml:
+      name: plugins
+    config/prow/labels.yaml:
+      name: label-config
