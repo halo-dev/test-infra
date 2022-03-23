@@ -65,11 +65,3 @@ tide:
     - JohnNiang
 
 decorate_all_jobs: true
-periodics:
-- interval: 1m
-  agent: kubernetes
-  name: echo-test
-  spec:
-    containers:
-    - image: alpine
-      command: ["/bin/date"]
