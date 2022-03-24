@@ -2,9 +2,6 @@ prowjob_namespace: prow
 pod_namespace: test-pods
 log_level: debug
 
-prowjob_namespace: prow
-pod_namespace: test-pods
-
 in_repo_config:
   enabled:
     "*": true
@@ -51,6 +48,7 @@ plank:
         sidecar: gcr.io/k8s-prow/sidecar:v20220310-033172a69b
 
 tide:
+  sync_period: 2m
   queries:
   - labels:
     - lgtm
@@ -62,6 +60,10 @@ tide:
     - do-not-merge/invalid-owners-file
     orgs:
     - halo-dev
-    - JohnNiang
+    - JohnNiang # For test only
+  merge_method:
+    halo-dev: squash
+    JohnNiang: squash # For test only
+    
 
 decorate_all_jobs: true
