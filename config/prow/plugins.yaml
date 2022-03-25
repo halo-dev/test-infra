@@ -16,6 +16,7 @@ plugins:
     - wip
     - yuks
     - retitle
+    - lifecycle
   JohnNiang/action-test: # For test only
     plugins:
     - approve
@@ -33,6 +34,7 @@ plugins:
     - wip
     - yuks
     - retitle
+    - lifecycle
   halo-dev/test-infra:
     plugins:
     - config-updater
