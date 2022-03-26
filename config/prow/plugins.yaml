@@ -17,6 +17,7 @@ plugins:
     - yuks
     - retitle
     - lifecycle
+    - milestone
   JohnNiang/action-test: # For test only
     plugins:
     - approve
@@ -35,6 +36,7 @@ plugins:
     - yuks
     - retitle
     - lifecycle
+    - milestone
   halo-dev/test-infra:
     plugins:
     - config-updater
