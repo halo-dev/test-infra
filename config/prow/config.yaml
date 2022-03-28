@@ -60,9 +60,11 @@ tide:
     - do-not-merge/invalid-owners-file
     orgs:
     - halo-dev
+    - metersphere
     - JohnNiang # For test only
   merge_method:
     halo-dev: squash
+    metersphere: squash
     JohnNiang: squash # For test only
     
 
