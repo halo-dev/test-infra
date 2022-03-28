@@ -18,6 +18,25 @@ plugins:
     - retitle
     - lifecycle
     - milestone
+  metersphere/metersphere:
+    plugins:
+    - approve
+    - assign
+    - blunderbuss
+    - cat
+    - dog
+    - help
+    - heart
+    - hold
+    - label
+    - lgtm
+    - trigger
+    - verify-owners
+    - wip
+    - yuks
+    - retitle
+    - lifecycle
+    - milestone
   JohnNiang/action-test: # For test only
     plugins:
     - approve
