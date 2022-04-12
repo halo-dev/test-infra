@@ -1,5 +1,5 @@
-prowjob_namespace: prow
-pod_namespace: test-pods
+prowjob_namespace: default
+pod_namespace: default
 log_level: debug
 
 in_repo_config:

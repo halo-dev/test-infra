@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: minio
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: default
+  name: s3-credentials
+stringData:
+  service-account.json: |
+    {
+      "region": "minio",
+      "access_key": "<<CHANGE_ME_MINIO_ROOT_USER>>",
+      "endpoint": "minio.default.svc.cluster.local",
+      "insecure": true,
+      "s3_force_path_style": true,
+      "secret_key": "<<CHANGE_ME_MINIO_ROOT_PASSWORD>>"
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: minio
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: minio
+    spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: minio
+      initContainers:
+        - name: bucket-creator
+          image: alpine
+          command:
+            - mkdir
+            - -p
+            - /data/prow-logs
+            - /data/tide
+            - /data/status-reconciler
+          volumeMounts:
+            - name: data
+              mountPath: "/data"
+      containers:
+        - name: minio
+          volumeMounts:
+            - name: data
+              mountPath: "/data"
+          image: minio/minio:latest
+          args:
+            - server
+            - /data
+          env:
+            - name: MINIO_ROOT_USER
+              value: "<<CHANGE_ME_MINIO_ROOT_USER>>"
+            - name: MINIO_ROOT_PASSWORD
+              value: "<<CHANGE_ME_MINIO_ROOT_PASSWORD>>"
+            - name: MINIO_REGION_NAME
+              value: minio
+          ports:
+            - containerPort: 9000
+          readinessProbe:
+            httpGet:
+              path: /minio/health/ready
+              port: 9000
+            periodSeconds: 20
+          livenessProbe:
+            httpGet:
+              path: /minio/health/live
+              port: 9000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio
+  namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 9000
+      protocol: TCP
+  selector:
+    app: minio
