@@ -7,7 +7,7 @@ experience.
 
 ## How to build cluster
 
-1. Bring Up Kubernetes Cluster
+1. Bring Up Kubernetes Cluster Using [KubeKey](https://github.com/kubesphere/kubekey)
 
     ```shell
     kk create cluster
@@ -19,25 +19,25 @@ experience.
     make -C config/prow deploy-openebs
     ```
 
-3. Deploy Ingress Controller
+3. Deploy [Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 
     ```shell
     make -C config/prow deploy-ingress-controller
     ```
 
-4. Deploy Cert Manager
+4. Deploy [Cert Manager](https://cert-manager.io/)
 
     ```shell
     make -C config/prow deploy-certmanager
     ```
 
-5. Deploy Load Balancer
+5. Deploy [Load Balancer](https://metallb.universe.tf/)
 
     ```shell
     make -C config/prow deploy-metallb
     ```
 
-6. Create Secrets
+6. Create GitHub Secrets
 
     1. github-token
 

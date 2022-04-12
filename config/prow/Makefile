@@ -1,10 +1,13 @@
 update-config:
-	kubectl create configmap config --from-file=config.yaml=config.yaml --dry-run=client -o yaml | kubectl replace configmap config -f -
+	kubectl create configmap config --from-file=config.yaml=config.yaml --dry-run=client -o yaml | kubectl apply -f -
 
 update-plugins:
-	kubectl create configmap plugins --from-file=plugins.yaml=plugins.yaml --dry-run=client -o yaml | kubectl replace configmap plugins -f -
+	kubectl create configmap plugins --from-file=plugins.yaml=plugins.yaml --dry-run=client -o yaml | kubectl apply -f -
 
-deploy-prow:
+update-label-config:
+	kubectl create configmap label-config --from-file=labels.yaml=labels.yaml --dry-run=client -o yaml | kubectl apply -f -
+
+deploy-prow: update-config update-plugins update-label-config
 	kubectl apply --server-side=true -f ./cluster/prowjob-crd/prowjob_customresourcedefinition.yaml
 	kubectl apply -f ./cluster/
 
