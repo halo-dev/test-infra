@@ -33,6 +33,9 @@ deploy-certmanager:
 	  --version v1.8.0
 
 deploy-metallb:
+	kubectl get configmap kube-proxy -n kube-system -o yaml | \
+    sed -e "s/strictARP: false/strictARP: true/" | \
+    kubectl apply -f - -n kube-system
 	helm repo add metallb https://metallb.github.io/metallb
 	helm repo update
 	helm upgrade --install metallb metallb/metallb -n metallb-system --create-namespace
