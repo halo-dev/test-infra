@@ -64,7 +64,7 @@ tide:
     - JohnNiang # For test only
   merge_method:
     halo-dev: squash
-    metersphere: squash
+    metersphere: rebase
     JohnNiang: squash # For test only
     
 
