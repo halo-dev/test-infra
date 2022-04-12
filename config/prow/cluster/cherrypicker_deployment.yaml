@@ -42,10 +42,17 @@ spec:
         image: gcr.io/k8s-prow/cherrypicker:v20220408-547c14a0ca
         imagePullPolicy: Always
         args:
-        - --github-token-path=/etc/github/token
         - --github-endpoint=http://ghproxy
         - --github-endpoint=https://api.github.com
         - --dry-run=false
+        - --github-app-id=$(GITHUB_APP_ID)
+        - --github-app-private-key-path=/etc/github/cert
+        env:
+            - name: GITHUB_APP_ID
+              valueFrom:
+                secretKeyRef:
+                  name: github-token
+                  key: appid
         ports:
           - name: http
             containerPort: 8888
@@ -66,4 +73,4 @@ spec:
           secretName: hmac-token
       - name: github-token
         secret:
-          secretName: robot-github-token
+          secretName: github-token

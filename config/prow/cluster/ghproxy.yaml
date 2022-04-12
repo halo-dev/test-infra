@@ -37,40 +37,31 @@ spec:
   selector:
     matchLabels:
       app: ghproxy
-  replicas: 1  # TODO(fejta): this should be HA
+  strategy:
+    type: Recreate
+  # GHProxy does not support HA
+  replicas: 1
   template:
     metadata:
       labels:
         app: ghproxy
     spec:
       containers:
-      - name: ghproxy
-        image: gcr.io/k8s-prow/ghproxy:v20220408-547c14a0ca
-        args:
-        - --cache-dir=/cache
-        - --cache-sizeGB=99
-        - --push-gateway=pushgateway
-        - --serve-metrics=true
-        ports:
-        - name: main
-          containerPort: 8888
-        - name: metrics
-          containerPort: 9090
-        volumeMounts:
-        - name: cache
-          mountPath: /cache
+        - name: ghproxy
+          image: gcr.io/k8s-prow/ghproxy:v20220411-ad5dbdfe6e
+          args:
+            - --cache-dir=/cache
+            - --cache-sizeGB=10
+            - --serve-metrics=false
+          ports:
+            - containerPort: 8888
+          volumeMounts:
+            - name: cache
+              mountPath: /cache
       volumes:
-      - name: cache
-        persistentVolumeClaim:
-          claimName: ghproxy
-      # run on our dedicated node
-      tolerations:
-      - key: "dedicated"
-        operator: "Equal"
-        value: "ghproxy"
-        effect: "NoSchedule"
-      nodeSelector:
-        dedicated: "ghproxy"
+        - name: cache
+          persistentVolumeClaim:
+            claimName: ghproxy
 ---
 apiVersion: v1
 kind: Service

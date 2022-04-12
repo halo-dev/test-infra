@@ -9,18 +9,50 @@ experience.
 
 1. Bring Up Kubernetes Cluster
 
-```shell
-kk create cluster
-```
+    ```shell
+    kk create cluster
+    ```
 
 2. Deploy [OpenEBS](https://openebs.io/)
 
-```shell
-make -C config/prow deploy-openebs
-```
+    ```shell
+    make -C config/prow deploy-openebs
+    ```
 
-3. Deploy Prow
+3. Deploy Ingress Controller
 
-```shell
-make -C config/prow deploy-prow
-```
+    ```shell
+    make -C config/prow deploy-ingress-controller
+    ```
+
+4. Deploy Cert Manager
+
+    ```shell
+    make -C config/prow deploy-certmanager
+    ```
+
+5. Deploy Load Balancer
+
+    ```shell
+    make -C config/prow deploy-metallb
+    ```
+
+6. Create Secrets
+
+    1. github-token
+
+       ```shell
+       kubectl create secret generic github-token --from-file=cert=my-prow-test.2022-03-11.private-key.pem --from-literal=appid=179827
+       ```
+
+    2. hmac-token
+
+       ```shell
+       kubectl create secret generic hmac-token --from-file=hmac=github-webhook-secret
+       ```
+
+7. Deploy Prow
+
+    ```shell
+    make -C config/prow deploy-prow
+    ```
