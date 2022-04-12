@@ -42,13 +42,13 @@ experience.
     1. github-token
 
        ```shell
-       kubectl create secret generic github-token --from-file=cert=my-prow-test.2022-03-11.private-key.pem --from-literal=appid=179827
+       kubectl create secret generic github-token --from-file=cert=my-prow-test.2022-03-11.private-key.pem --from-literal=appid=179827 --from-file=token=bot-access-token --dry-run=client -oyaml | kubectl apply -f -
        ```
 
     2. hmac-token
 
        ```shell
-       kubectl create secret generic hmac-token --from-file=hmac=github-webhook-secret
+       kubectl create secret generic hmac-token --from-file=hmac=github-webhook-secret --dry-run=client -oyaml | kubectl apply -f -
        ```
 
 7. Deploy Prow

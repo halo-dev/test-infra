@@ -20,7 +20,7 @@ stringData:
     {
       "region": "minio",
       "access_key": "<<CHANGE_ME_MINIO_ROOT_USER>>",
-      "endpoint": "minio.svc.cluster.local",
+      "endpoint": "minio.default.svc.cluster.local",
       "insecure": true,
       "s3_force_path_style": true,
       "secret_key": "<<CHANGE_ME_MINIO_ROOT_PASSWORD>>"

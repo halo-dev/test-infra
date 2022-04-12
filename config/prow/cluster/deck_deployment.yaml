@@ -42,7 +42,7 @@ spec:
           args:
             - --config-path=/etc/config/config.yaml
             - --plugin-config=/etc/plugins/plugins.yaml
-            - --tide-url=http://tide/
+            - --tide-url=http://tide.default/
             - --hook-url=http://hook:8888/plugin-help
             - --github-endpoint=http://ghproxy
             - --github-endpoint=https://api.github.com
