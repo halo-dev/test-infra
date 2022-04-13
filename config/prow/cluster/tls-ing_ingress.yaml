@@ -27,7 +27,7 @@ spec:
         number: 80
   ingressClassName: nginx
   rules:
-    - host: prow.songliping.cc
+    - host: prow.halo.run
       http:
         paths:
           - backend:
@@ -46,5 +46,5 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - prow.songliping.cc
+        - prow.halo.run
       secretName: prow-ingress-prod-cert
