@@ -87,7 +87,11 @@ label:
     - tide/merge-method-squash
     
 approve:
-  - require_self_approval: true
+  - repos:
+      - halo-dev
+      - metersphere
+      - JohnNiang/action-test # Only for test
+    require_self_approval: true
     
 welcome:
 - repos:
