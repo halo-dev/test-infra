@@ -89,7 +89,8 @@ label:
 approve:
   - repos:
       - halo-dev
-      - JohnNiang # Only for test
+      - metersphere
+      - JohnNiang/action-test # Only for test
     require_self_approval: true
     
 welcome:
