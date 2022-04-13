@@ -87,7 +87,10 @@ label:
     - tide/merge-method-squash
     
 approve:
-  - require_self_approval: true
+  - repos:
+      - halo-dev
+      - JohnNiang # Only for test
+    require_self_approval: true
     
 welcome:
 - repos:
