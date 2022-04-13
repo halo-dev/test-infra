@@ -29,11 +29,11 @@ deck:
 
 plank:
   job_url_prefix_config:
-    "*": https://prow.songliping.cc/view/
+    "*": https://prow.halo.run/view/
   report_templates:
     '*': >-
-        [Full PR test history](https://prow.songliping.cc/pr-history?org={{.Spec.Refs.Org}}&repo={{.Spec.Refs.Repo}}&pr={{with index .Spec.Refs.Pulls 0}}{{.Number}}{{end}}).
-        [Your PR dashboard](https://prow.songliping.cc/pr?query=is:pr+state:open+author:{{with
+        [Full PR test history](https://prow.halo.run/pr-history?org={{.Spec.Refs.Org}}&repo={{.Spec.Refs.Repo}}&pr={{with index .Spec.Refs.Pulls 0}}{{.Number}}{{end}}).
+        [Your PR dashboard](https://prow.halo.run/pr?query=is:pr+state:open+author:{{with
         index .Spec.Refs.Pulls 0}}{{.Author}}{{end}}).
   default_decoration_configs:
     "*":

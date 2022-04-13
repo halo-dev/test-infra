@@ -1,8 +1,8 @@
 # Halo Test Infra
 
-We have deployed [Prow](https://prow.songliping.cc/) at <https://prow.songliping.cc/>.
+We have deployed [Prow](https://prow.halo.run/) at <https://prow.halo.run/>.
 
-Please see [command-help](https://prow.songliping.cc/command-help) to learn how to use Prow to automate Halo development
+Please see [command-help](https://prow.halo.run/command-help) to learn how to use Prow to automate Halo development
 experience.
 
 ## How to build cluster
