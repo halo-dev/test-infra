@@ -18,6 +18,7 @@ plugins:
     - retitle
     - lifecycle
     - milestone
+    - milestonestatus
   metersphere/metersphere:
     plugins:
     - approve
@@ -37,6 +38,7 @@ plugins:
     - retitle
     - lifecycle
     - milestone
+    - milestonestatus
   JohnNiang/action-test: # For test only
     plugins:
     - approve
@@ -55,7 +57,6 @@ plugins:
     - yuks
     - retitle
     - lifecycle
-    - milestone
   halo-dev/test-infra:
     plugins:
     - config-updater
@@ -92,6 +93,11 @@ approve:
       - metersphere
       - JohnNiang/action-test # Only for test
     require_self_approval: true
+
+repo_milestone:
+  "halo-dev-milestone":
+    maintainers_id: 5847331
+    maintainers_team: milestone-maintainers
     
 welcome:
 - repos:
