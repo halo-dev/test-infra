@@ -108,3 +108,10 @@ welcome:
       - halo-dev
       - JohnNiang # For test only
     message_template: "Welcome @{{.AuthorLogin}}! <br><br>It looks like this is your first PR to <a href='https://github.com/{{.Org}}/{{.Repo}}'>{{.Org}}/{{.Repo}}</a> 🎉. Please refer to our [pull request process documentation](https://github.com/halo-dev/halo/blob/master/CONTRIBUTING.md) to help your PR have a smooth ride to approval. <br><br>You will be prompted by a bot to use commands during the review process. Do not be afraid to follow the prompts! It is okay to experiment. [Here is the bot commands documentation](https://prow.halo.run/command-help). <br><br>You can also check if {{.Org}}/{{.Repo}} has [its own contribution guidelines](https://github.com/{{.Org}}/{{.Repo}}/tree/master/CONTRIBUTING.md). We want to make sure your contribution gets all the attention it needs! <br><br>Thank you, and welcome to Halo. :smiley:"
+
+external_plugins:
+  halo-dev:
+    - name: cherrypick
+      events:
+        - issue_comment
+        - pull_request
