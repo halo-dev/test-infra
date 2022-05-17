@@ -182,6 +182,12 @@ default:
       target: both
       prowPlugin: label
       addedBy: anyone
+    - color: f714c6
+      description: Categorizes issue or PR as related to a improvement.
+      name: kind/improvement
+      target: both
+      prowPlugin: label
+      addedBy: anyone
     - color: f7c6c7
       description: Categorizes issue or PR as related to a flaky test.
       name: kind/flake
