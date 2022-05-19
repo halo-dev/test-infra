@@ -71,6 +71,9 @@ config_updater:
       name: plugins
     config/prow/labels.yaml:
       name: label-config
+    config/jobs/**/*.{yaml,yml}:
+      name: job-config
+      gzip: true
 
 # Lower bounds in number of lines changed; XS is assumed to be zero.
 size:
