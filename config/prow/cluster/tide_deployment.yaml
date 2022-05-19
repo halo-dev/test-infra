@@ -38,6 +38,7 @@ spec:
           args:
             - --dry-run=false
             - --config-path=/etc/config/config.yaml
+            - --job-config-path=/etc/job-config
             - --github-endpoint=http://ghproxy
             - --github-endpoint=https://api.github.com
             - --github-graphql-endpoint=http://ghproxy/graphql
@@ -55,6 +56,8 @@ spec:
           ports:
             - name: http
               containerPort: 8888
+            - name: metrics
+              containerPort: 9090
           volumeMounts:
             - name: github-token
               mountPath: /etc/github
@@ -64,6 +67,9 @@ spec:
               readOnly: true
             - name: s3-credentials
               mountPath: /etc/s3-credentials
+              readOnly: true
+            - name: job-config
+              mountPath: /etc/job-config
               readOnly: true
       volumes:
         - name: github-token
@@ -75,3 +81,6 @@ spec:
         - name: s3-credentials
           secret:
             secretName: s3-credentials
+        - name: job-config
+          configMap:
+            name: job-config
