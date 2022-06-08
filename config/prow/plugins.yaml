@@ -20,7 +20,7 @@ plugins:
       - milestone
       - milestonestatus
       - release-note
-  metersphere/metersphere:
+  metersphere:
     plugins:
       - approve
       - assign
