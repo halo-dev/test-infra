@@ -122,3 +122,11 @@ external_plugins:
     - name: needs-rebase
       events:
         - pull_request
+  metersphere:
+    - name: cherrypicker
+      events:
+        - issue_comment
+        - pull_request
+    - name: needs-rebase
+      events:
+        - pull_request        
