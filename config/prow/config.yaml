@@ -61,9 +61,11 @@ tide:
     orgs:
     - halo-dev
     - metersphere
+    - f2ccloud
     - JohnNiang # For test only
   merge_method:
     halo-dev: squash
+    f2ccloud: squash
     metersphere: rebase
     JohnNiang: squash # For test only
     
