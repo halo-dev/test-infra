@@ -68,6 +68,10 @@ tide:
     f2ccloud: squash
     metersphere: rebase
     JohnNiang: squash # For test only
-    
+  merge_commit_template:
+    ti-community-infra/test-dev:
+      title: "{{ .Title }} (#{{ .Number }})"
+      body: |
+        {{ .Body }}
 
 decorate_all_jobs: true
