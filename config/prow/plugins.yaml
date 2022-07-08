@@ -40,6 +40,27 @@ plugins:
       - lifecycle
       - milestone
       - milestonestatus
+  f2ccloud:
+    plugins:
+      - approve
+      - assign
+      - blunderbuss
+      - cat
+      - dog
+      - help
+      - heart
+      - hold
+      - label
+      - lgtm
+      - trigger
+      - verify-owners
+      - wip
+      - yuks
+      - retitle
+      - lifecycle
+      - milestone
+      - milestonestatus
+      - release-note      
   JohnNiang/action-test: # For test only
     plugins:
       - approve
@@ -94,6 +115,7 @@ approve:
   - repos:
       - halo-dev
       - metersphere
+      - f2ccloud
       - JohnNiang/action-test # Only for test
     require_self_approval: true
 
