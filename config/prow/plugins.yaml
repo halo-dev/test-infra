@@ -20,6 +20,27 @@ plugins:
       - milestone
       - milestonestatus
       - release-note
+  halo-sigs:
+    plugins:
+      - approve
+      - assign
+      - blunderbuss
+      - cat
+      - dog
+      - help
+      - heart
+      - hold
+      - label
+      - lgtm
+      - trigger
+      - verify-owners
+      - wip
+      - yuks
+      - retitle
+      - lifecycle
+      - milestone
+      - milestonestatus
+      - release-note
   metersphere:
     plugins:
       - approve
@@ -114,6 +135,7 @@ label:
 approve:
   - repos:
       - halo-dev
+      - halo-sigs
       - metersphere
       - f2ccloud
       - JohnNiang/action-test # Only for test
