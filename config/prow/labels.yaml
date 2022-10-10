@@ -337,8 +337,8 @@ default:
       prowPlugin: label
       addedBy: anyone
     - color: d2b48c
-      description: Categorizes an issue or PR as relevant to SIG Halo Admin.
-      name: sig/halo-admin
+      description: Categorizes an issue or PR as relevant to SIG Halo Console.
+      name: sig/halo-console
       target: both
       prowPlugin: label
       addedBy: anyone
@@ -452,8 +452,8 @@ repos:
         target: both
         addedBy: label
       - color: 0052cc
-        description: Issues or PRs related to the Halo Admin 
-        name: area/admin
+        description: Issues or PRs related to the Halo Console 
+        name: area/console
         target: both
         addedBy: label
       - color: 0052cc
