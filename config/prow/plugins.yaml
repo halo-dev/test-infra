@@ -100,6 +100,27 @@ plugins:
       - yuks
       - retitle
       - lifecycle
+  1Panel-dev:
+    plugins:
+      - approve
+      - assign
+      - blunderbuss
+      - cat
+      - dog
+      - help
+      - heart
+      - hold
+      - label
+      - lgtm
+      - trigger
+      - verify-owners
+      - wip
+      - yuks
+      - retitle
+      - lifecycle
+      - milestone
+      - milestonestatus
+      - release-note
   halo-dev/test-infra:
     plugins:
       - config-updater
@@ -139,6 +160,7 @@ approve:
       - metersphere
       - f2ccloud
       - JohnNiang/action-test # Only for test
+      - 1Panel-dev
     require_self_approval: true
 
 repo_milestone:
