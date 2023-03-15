@@ -64,6 +64,7 @@ tide:
     - metersphere
     - f2ccloud
     - JohnNiang # For test only
+    - 1Panel-dev
   merge_method:
     halo-dev: squash
     halo-sigs: squash
