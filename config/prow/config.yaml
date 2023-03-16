@@ -71,7 +71,7 @@ tide:
     f2ccloud: squash
     metersphere: rebase
     JohnNiang: squash # For test only
-    1Panel-dev: squash
+    1Panel-dev: rebase
   merge_commit_template:
     halo-dev:
       title: "{{ .Title }} (#{{ .Number }})"
