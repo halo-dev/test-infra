@@ -64,18 +64,24 @@ tide:
     - metersphere
     - f2ccloud
     - JohnNiang # For test only
+    - 1Panel-dev
   merge_method:
     halo-dev: squash
     halo-sigs: squash
     f2ccloud: squash
     metersphere: rebase
     JohnNiang: squash # For test only
+    1Panel-dev: squash
   merge_commit_template:
     halo-dev:
       title: "{{ .Title }} (#{{ .Number }})"
       body: |
         {{ .Body }}
     halo-sigs:
+      title: "{{ .Title }} (#{{ .Number }})"
+      body: |
+        {{ .Body }}
+    1Panel-dev:
       title: "{{ .Title }} (#{{ .Number }})"
       body: |
         {{ .Body }}
