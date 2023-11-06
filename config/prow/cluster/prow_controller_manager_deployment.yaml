@@ -47,7 +47,7 @@ spec:
                 secretKeyRef:
                   name: github-token
                   key: appid
-          image: gcr.io/k8s-prow/prow-controller-manager:v20220518-4571841471
+          image: gcr.io/k8s-prow/prow-controller-manager:v20231103-74dcf8db5c
           ports:
             - name: metrics
               containerPort: 9090
