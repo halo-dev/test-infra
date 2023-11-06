@@ -9,7 +9,7 @@ postsubmits:
       spec:
         serviceAccountName: deployer
         containers:
-          - image: gcr.io/k8s-staging-test-infra/gcloud-in-go:v20220314-46af1b01a6
+          - image: gcr.io/k8s-staging-test-infra/gcloud-in-go:v20230111-cd1b3caf9c
             command:
               - make
             args:
@@ -26,7 +26,7 @@ periodics:
     spec:
       containers:
         - name: label-sync
-          image: gcr.io/k8s-prow/label_sync:v20220330-40eb179576
+          image: gcr.io/k8s-prow/label_sync:v20231103-74dcf8db5c
           command:
             - label_sync
           args:
