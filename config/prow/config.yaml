@@ -42,10 +42,10 @@ plank:
         path_strategy: explicit
       s3_credentials_secret: s3-credentials
       utility_images:
-        clonerefs: gcr.io/k8s-prow/clonerefs:v20220310-033172a69b
-        entrypoint: gcr.io/k8s-prow/entrypoint:v20220310-033172a69b
-        initupload: gcr.io/k8s-prow/initupload:v20220310-033172a69b
-        sidecar: gcr.io/k8s-prow/sidecar:v20220310-033172a69b
+        clonerefs: gcr.io/k8s-prow/clonerefs:v20231103-74dcf8db5c
+        entrypoint: gcr.io/k8s-prow/entrypoint:v20231103-74dcf8db5c
+        initupload: gcr.io/k8s-prow/initupload:v20231103-74dcf8db5c
+        sidecar: gcr.io/k8s-prow/sidecar:v20231103-74dcf8db5c
 
 tide:
   sync_period: 2m
