@@ -1,3 +1,5 @@
+# Utilities for operating Prow
+
 update-config:
 	kubectl create configmap config --from-file=config.yaml=config.yaml --dry-run=client -o yaml | kubectl apply -f -
 
