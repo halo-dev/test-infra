@@ -85,5 +85,9 @@ tide:
       title: "{{ .Title }} (#{{ .Number }})"
       body: |
         {{ .Body }}
+    f2ccloud:
+      title: "{{ .Title }} (#{{ .Number }})"
+      body: |
+        {{ .Body }}
 
 decorate_all_jobs: true
