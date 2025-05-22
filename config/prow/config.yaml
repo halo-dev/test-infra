@@ -62,13 +62,13 @@ tide:
     - halo-dev
     - halo-sigs
     - metersphere
-    - f2ccloud
+    - lxware-dev
     - JohnNiang # For test only
     - 1Panel-dev
   merge_method:
     halo-dev: squash
     halo-sigs: squash
-    f2ccloud: squash
+    lxware-dev: squash
     metersphere: rebase
     JohnNiang: squash # For test only
     1Panel-dev: squash
@@ -85,7 +85,7 @@ tide:
       title: "{{ .Title }} (#{{ .Number }})"
       body: |
         {{ .Body }}
-    f2ccloud:
+    lxware-dev:
       title: "{{ .Title }} (#{{ .Number }})"
       body: |
         {{ .Body }}

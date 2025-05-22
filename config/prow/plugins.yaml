@@ -61,7 +61,7 @@ plugins:
       - lifecycle
       - milestone
       - milestonestatus
-  f2ccloud:
+  lxware-dev:
     plugins:
       - approve
       - assign
@@ -158,7 +158,7 @@ approve:
       - halo-dev
       - halo-sigs
       - metersphere
-      - f2ccloud
+      - lxware-dev
       - JohnNiang/action-test # Only for test
       - 1Panel-dev
     require_self_approval: true
@@ -196,7 +196,7 @@ external_plugins:
     - name: needs-rebase
       events:
         - pull_request        
-  f2ccloud:
+  lxware-dev:
     - name: cherrypicker
       events:
         - issue_comment
