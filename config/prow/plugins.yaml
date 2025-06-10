@@ -204,3 +204,9 @@ external_plugins:
     - name: needs-rebase
       events:
         - pull_request
+  1Panel-dev:
+    - name: cherrypicker
+      events:
+        - issue_comment
+        - pull_request
+
