@@ -3,7 +3,6 @@ plugins:
     plugins:
       - approve
       - assign
-      - blunderbuss
       - cat
       - dog
       - help
@@ -81,7 +80,7 @@ plugins:
       - lifecycle
       - milestone
       - milestonestatus
-      - release-note      
+      - release-note
   JohnNiang/action-test: # For test only
     plugins:
       - approve
@@ -195,7 +194,7 @@ external_plugins:
         - pull_request
     - name: needs-rebase
       events:
-        - pull_request        
+        - pull_request
   lxware-dev:
     - name: cherrypicker
       events:
@@ -209,4 +208,3 @@ external_plugins:
       events:
         - issue_comment
         - pull_request
-
