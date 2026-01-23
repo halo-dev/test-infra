@@ -471,3 +471,35 @@ repos:
         name: area/docs
         target: both
         addedBy: label
+  lxware-dev/halo-pro:
+    labels:
+      - color: 0052cc
+        description: Issues or PRs related to the Theme Provider 
+        name: area/theme
+        target: both
+        addedBy: label
+      - color: 0052cc
+        description: Issues or PRs related to the Halo Core
+        name: area/core
+        target: both
+        addedBy: label
+      - color: 0052cc
+        description: Issues or PRs related to the Halo Console 
+        name: area/console
+        target: both
+        addedBy: label
+      - color: 1d76db
+        description: Issues or PRs related to the Halo UI
+        name: area/ui
+        target: both
+        addedBy: label
+      - color: 0052cc
+        description: Issues or PRs related to the Halo Comment
+        name: area/comment
+        target: both
+        addedBy: label
+      - color: 0052cc
+        description: Issues or PRs related to the Halo Documentation
+        name: area/docs
+        target: both
+        addedBy: label
