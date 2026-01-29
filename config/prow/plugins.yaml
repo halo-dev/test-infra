@@ -169,6 +169,10 @@ repo_milestone:
     maintainers_id: 5847331
     maintainers_team: milestone-maintainers
     maintainers_friendly_name: Milestone Maintainers Team
+  lxware-dev:
+    maintainers_id: 16006972
+    maintainers_team: milestone-maintainers
+    maintainers_friendly_name: Milestone Maintainers
 
 welcome:
   - repos:
