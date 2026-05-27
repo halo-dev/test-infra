@@ -1,9 +1,11 @@
-# Halo Test Infra
+# Halo Test Infra (Archived)
 
-We have deployed [Prow](https://prow.halo.run/) at <https://prow.halo.run/>.
+> **Note:** This repository has been archived. We have decided to no longer use Prow for Halo CI/CD.
 
-Please see [command-help](https://prow.halo.run/command-help) to learn how to use Prow to automate Halo development
-experience.
+We had deployed [Prow](https://prow.halo.run/) at <https://prow.halo.run/>.
+
+<details>
+<summary>Historical setup instructions</summary>
 
 ## How to build cluster
 
@@ -56,3 +58,5 @@ experience.
     ```shell
     make -C config/prow deploy-prow
     ```
+
+</details>
